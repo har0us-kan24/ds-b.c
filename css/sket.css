@@ -1,0 +1,97 @@
+/* Global Settings */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    /* COLOUR PALETTE Start */
+        /* Typo-Palette */
+        --typo-one: hsla(0, 0%, 20%, 1);
+        --typo-one-60: hsla(0, 0%, 0%, 0.6);
+        --typo-two: hsla(0, 0%, 100%, 1);
+        /* Mater-Palette */
+        --mater-one: hsla(0, 0%, 20%, 1);
+        --mater-one-90: hsla(0, 0%, 0%, 0.9);
+        --mater-two: hsla(0, 0%, 100%, 1);
+        /* Gradient-Palette */
+        --grad-one: linear-gradient(180deg, hsla(0,0%,0%,0.05), hsla(0,0%,0%,0.15));
+        --grad-two: linear-gradient(to top, hsla(0, 0%, 100%, 0) 50%, hsla(0, 0%, 100%, 0.2) 50%, rgba(255, 255, 255, 0.5) 100%), linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, hsla(0, 0%, 100%, 0.4) 15%, hsla(0, 0%, 100%, 0.1) 50%), linear-gradient(to top, #e68400, #e68200);
+    /* COLOUR PALETTE End */
+}
+
+* {
+    outline: 0px dashed lightgrey;
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    color: var(--typo-one);
+}
+
+/* TYPOGRAPHY Start */
+p {
+    margin: 0;
+}
+.paragraph {
+    padding-bottom: 2rem;
+}
+/* TYPOGRAPHY End */
+
+/* GLOBAL ELEMENTS Start */
+.button {
+    padding: 0.75rem;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--typo-two);
+    background-image: var(--grad-two);
+    border: 1.5px #ffd65b;
+    border-style: outset;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+.button:active {
+    outline: none;
+    transform: translateY(0.1rem);
+}
+.button:focus {
+    outline: none;
+}
+/*
+.button::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -10px;
+    width: 90%;
+    background: inherit;
+    filter: blur(6px);
+}
+*/
+.button .button-desktop {
+    display: none;
+}
+.button span {
+    color: var(--typo-two);
+}
+
+/* GLOBAL ELEMENTS End */
+
+@media (min-width: 1024px) {
+    .button:hover {
+        box-shadow: 0 6px 20px 6px hsla(34, 100%, 45%, 0.2);
+        transform: translateY(-0.1rem);
+    }
+    .button .button-mobile {
+        display: none;
+    }
+    .button .button-desktop {
+        display: unset;
+    }
+    .button-modal {
+        width: 40%;
+    }
+    .button-modal:hover {
+        box-shadow: 0 6px 20px 6px hsla(34, 100%, 45%, 0.2);
+    }
+}

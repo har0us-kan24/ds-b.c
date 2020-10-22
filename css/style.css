@@ -1,0 +1,138 @@
+.jumbotron {
+    margin-bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url('../img/jumbotron.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: unset;
+}
+#card { /* First layer */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-in-out;
+}
+#card.fade {
+    opacity: 0;
+}
+#panel {
+    padding: 1rem;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -2px 20px 6px hsla(0, 0%, 0%, 0.3);
+}
+.host-upper {
+    margin-bottom: 1.5rem;
+}
+.avatar {
+    margin: auto;
+    margin-top: -4.5rem;
+    width: 7rem;
+    height: 7rem;
+    background-image: url('../img/avatar-02.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 16px 3px hsla(0, 0%, 0%, 0.2);
+}
+.host-lower {
+    outline: 0px solid red;
+}
+.host-lower .identity {
+    text-align: center;
+}
+
+/* MODAL-QR Start */
+.modal-qr { /* Transparent black whole screen. Second layer */
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    background-color: var(--mater-one-90);
+    animation: fadeIn 0.3s ease-out;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+}
+.qr-modal-content { /* Upper sector */
+    outline: 0px solid red;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-qr-code {
+    outline: 0px solid lightgreen;
+    width: 50vw;
+    height: auto;
+    background-color: var(--mater-two);
+}
+.modal-button { /* Lower sector */
+    outline: 0px solid yellow;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* MODAL-QR End */
+
+
+@media (min-width: 1024px) {
+    #card {
+        width: 60%;
+        height: 80%;
+    }
+    #panel {
+        padding: 2.5rem;
+        height: 100%;
+        display: flex;
+        column-gap: 2rem;
+        border-radius: 4px;
+    }
+    .host-upper {
+        padding: auto 1rem;
+        width: 25%;
+        height: 100%;
+        background-image: linear-gradient(180deg, hsla(0,0%,0%,0.05), hsla(0,0%,0%,0.15));
+        /*
+        background-color: #002c40; */
+    }
+    .avatar {
+        margin-top: unset;
+        width: 100%;
+        height: 100%;
+        background-size: auto 65%;
+        border-radius: unset;
+        box-shadow: unset;
+    }
+    .host-lower {
+        width: 75%;
+    }
+
+    /* MODAL-QR Start */
+    .modal-qr-code {
+        width: 30vw;
+    }
+    /* MODAL-QR Start */
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/*
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+} */
